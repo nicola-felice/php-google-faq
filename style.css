@@ -54,6 +54,10 @@ svg {
 header {
   padding: 1.25rem 1.5rem 0 1.25rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.214);
+  position: sticky;
+  background-color: white;
+  z-index: 99999;
+  top: 0;
 }
 
 /* header top */
