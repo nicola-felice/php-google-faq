@@ -63,52 +63,59 @@ $faqs = [
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>php google faq</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"> 
 </head>
 <body>
   <header></header>
 
   <main>
-    <?php foreach ( $faqs as $elm ) { ?>
+    <div class="container">
+      <?php foreach ( $faqs as $elm ) { ?>
 
-      <h2><?= "{$elm["question"]}" ?></h2>
+        <h2><?= "{$elm["question"]}" ?></h2>
 
-      <?php foreach ( $elm["answer"] as $key => $paragraph ) { ?>
-        <?php if ( $key === "subtitle" ) { ?>
-          <h3><?= $paragraph ?></h3>
-        <?php } elseif ( !is_array($paragraph) ) { ?>
-          <p><?= $paragraph ?></p>
-        <?php } elseif ( is_array($paragraph) ) { ?>
-          <p>
-            <!-- main list -->
-            <ol>  
-              <?php foreach ( $paragraph as $value ) { ?>
-                <li>
-                  <?php if ( !is_array($value) ) { ?>
-                    <?= "{$value}" ?>
-                  <?php } ?>
-                  <?php if ( is_array($value) ) { ?>
-                    <?php foreach ( $value as $content ) { ?>
-                      <?php if ( !is_array($content) ) { ?>
-                        <?= "{$content}" ?>
-                      <?php } ?>
-                      <?php if ( is_array($content) ) { ?>
-                        <!-- sub list -->
-                        <ol type="a">
-                          <?php foreach ( $content as $text ) { ?>
-                            <li><?= "{$text}" ?></li>
-                          <?php } ?>
-                        </ol>
+        <?php foreach ( $elm["answer"] as $key => $paragraph ) { ?>
+          <?php if ( $key === "subtitle" ) { ?>
+            <h3><?= $paragraph ?></h3>
+          <?php } elseif ( !is_array($paragraph) ) { ?>
+            <p><?= $paragraph ?></p>
+          <?php } elseif ( is_array($paragraph) ) { ?>
+            <p>
+              <!-- main list -->
+              <ol>  
+                <?php foreach ( $paragraph as $value ) { ?>
+                  <li>
+                    <?php if ( !is_array($value) ) { ?>
+                      <?= "{$value}" ?>
+                    <?php } ?>
+                    <?php if ( is_array($value) ) { ?>
+                      <?php foreach ( $value as $content ) { ?>
+                        <?php if ( !is_array($content) ) { ?>
+                          <?= "{$content}" ?>
+                        <?php } ?>
+                        <?php if ( is_array($content) ) { ?>
+                          <!-- sub list -->
+                          <ol type="a">
+                            <?php foreach ( $content as $text ) { ?>
+                              <li><?= "{$text}" ?></li>
+                            <?php } ?>
+                          </ol>
+                        <?php } ?>
                       <?php } ?>
                     <?php } ?>
-                  <?php } ?>
-                </li>
-              <?php } ?>
-            </ol>
-          </p>
+                  </li>
+                <?php } ?>
+              </ol>
+            </p>
+          <?php } ?>
         <?php } ?>
-      <?php } ?>
 
-    <?php } ?>
+      <?php } ?>      
+    </div>
+
   </main>
 
   <footer></footer>
