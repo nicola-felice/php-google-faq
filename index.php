@@ -87,6 +87,27 @@ $faqs = [
       <div class="user_info">
       </div>
     </div>
+    <div class="header_nav">
+      <nav>
+        <ul>
+          <li>
+            <a href="#">Introduzione</a>
+          </li>
+          <li>
+            <a href="#">Norme sulla privacy</a>
+          </li>
+          <li>
+            <a href="#">Termini di servizio</a>
+          </li>
+          <li>
+            <a href="#">Tecnologie</a>
+          </li>
+          <li class="active">
+            <a href="#">Domande frequenti</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <main>
