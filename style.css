@@ -17,7 +17,8 @@ li {
   margin: 1.5rem 0;
   line-height: 1.35rem;
   font-weight: 400;
-  font-size: .875rem;
+  font-size: .95rem;
+  color: rgba(0, 0, 0, 0.877);
   font-family: 'Roboto', sans-serif;
 }
 ol {
@@ -105,5 +106,10 @@ header {
 }
 .header_nav li.active {
   border-bottom: 2px solid #3367d6;
+  color: #3367d6;
+}
+
+/* main */
+main a {
   color: #3367d6;
 }
